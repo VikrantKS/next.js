@@ -6,7 +6,7 @@ describe('acceptLanguage', () => {
     expect(language).toEqual('da')
   })
 
-  it('respects weights', () => {
+  it('respects weights. ', () => {
     const language = acceptLanguage('en;q=0.6, en-GB;q=0.8')
     expect(language).toEqual('en-gb')
   })

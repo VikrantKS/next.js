@@ -1,0 +1,24 @@
+---
+framework: jest
+preRun:
+  command:
+    - pnpm install --shamefully-hoist
+    - pnpm run build
+preMerge:
+  env:
+    TRACE_PLAYWRIGHT: true
+    HEADLESS: true
+  pattern:
+    - 'test/unit/**/*.test.{js,ts,tsx}'
+postMerge:
+  env:
+    TRACE_PLAYWRIGHT: true
+    HEADLESS: true
+  pattern:
+    - 'test/unit/**/*.test.{js,ts,tsx}'
+postRun:
+  command:
+    - node --version
+version: 1.0.0
+parallelism: 2
+splitMode: file

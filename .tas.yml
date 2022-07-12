@@ -20,5 +20,4 @@ postRun:
   command:
     - node --version
 version: 1.0.0
-parallelism: 2
-splitMode: file
+parallelism: 5
